@@ -15,4 +15,11 @@ public class StudentService {
 		return save;
 		
 	}
+
+	
+	public Student getStudent(Long id) {
+	    return repo.findById(id)
+	               .orElseThrow(() -> new RuntimeException("Student not found"));
+	}
+
 }
